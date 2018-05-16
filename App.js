@@ -1,45 +1,25 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, {Component} from 'react';
-import {Platform, StyleSheet, Text, View} from 'react-native';
-import Item from './src/components/item'
-const users = [
-  {
-    username: 'Jerry',
-    age: 21,
-    gender: 'male'
-  }, {
-    username: 'Tomy',
-    age: 22,
-    gender: 'male'
-  }, {
-    username: 'Lily',
-    age: 19,
-    gender: 'female'
-  }, {
-    username: 'Lucy',
-    age: 20,
-    gender: 'female'
-  }
-]
-export default class App extends Component {
-  render() {
-    return (
-      <View style={styles.container}>
-        {users.map((user,i) => <Item key={i} user={user} />)}
-      </View>
-    );
-  }
-}
+import {
+  Platform,
+  StyleSheet,
+  Text,
+  View,
+  ScrollView,
+  Modal,
+  Button,
+  TouchableHighlight
+} from 'react-native';
+import {StackNavigator} from 'react-navigation';
+import DetailPage from './src/views/detail'
+import FrontPage from './src/views/frontPage'
+import {hidden} from 'ansi-colors';
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    padding:30,
-    backgroundColor: '#F5FCFF'
+const APP = StackNavigator({
+  Home: {
+    screen: FrontPage
   },
+  Chat: {
+    screen: DetailPage
+  }
 });
+export default APP;
