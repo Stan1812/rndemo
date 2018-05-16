@@ -26,7 +26,8 @@ export default class ModalTest extends Component {
             marginTop: 22
           }}>
             <View>
-              <Text>Hello </Text>
+              <Text>Hello
+              </Text>
               <TouchableHighlight
                 onPress={() => {
                 this.setModalVisible(!this.state.modalVisible)
